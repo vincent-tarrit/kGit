@@ -1,0 +1,15 @@
+{
+    "require": {
+        "symfony/console": "^6.1",
+        "symfony/finder": "^6.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "Console\\": "src"
+        },
+        "classmap": ["src"]
+    },
+    "require-dev": {
+        "symfony/var-dumper": "^6.1"
+    }
+}

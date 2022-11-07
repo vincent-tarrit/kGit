@@ -1,0 +1,20 @@
+#!/usr/bin/env php
+<?php
+require_once __DIR__ . '/../vendor/autoload.php';
+
+use Symfony\Component\Console\Application;
+use Symfony\Component\Console\Input\InputOption;
+use Symfony\Component\Finder\Finder;
+
+$finder = new Finder();
+
+$files = $finder->files()->in(__DIR__ . '/../src/App/Commands');
+
+$app = new Application('kGit', '1.0.0');
+
+foreach ($files as $file) {
+    $class = 'Console\App\Commands\\' . $file->getBasename('.php');
+    $app->add(new $class());
+}
+
+$app->run();
