@@ -10,7 +10,7 @@ $finder = new Finder();
 
 $files = $finder->files()->in(__DIR__ . '/../src/App/Commands');
 
-$app = new Application('kGit', '1.0.0');
+$app = new Application('kGit', '0.0.1');
 
 foreach ($files as $file) {
     $class = 'Console\App\Commands\\' . $file->getBasename('.php');
