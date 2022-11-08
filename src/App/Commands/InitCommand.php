@@ -14,7 +14,7 @@ class InitCommand extends Command
     protected function configure()
     {
         $this->setName('init')
-            ->setDescription('Initializes the application.')
+            ->setDescription('Initializes the repository.')
             ->setHelp('Allows you to initialize the application on Infomaniak servers');
     }
 
