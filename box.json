@@ -1,0 +1,11 @@
+{
+    "main": "bin/console",
+    "directories": ["src", "vendor"],
+    "finder": [{
+        "name": "*.php",
+        "exclude": ["Tests", "tests"],
+        "in": "vendor"
+    }],
+    "compression": "BZ2",
+    "output": "build/kgit.phar"
+}
