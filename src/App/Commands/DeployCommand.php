@@ -24,8 +24,6 @@ class DeployCommand extends Command
         $question = $this->getHelper('question');
         $config = (new Config($input, $output, $question))->init();
 
-        dump($config);
-
         $output->writeln('Deploying...');
 
         exec("git add .");

@@ -25,16 +25,12 @@ class InitCommand extends Command
 
         $config = (new Config($input, $output, $question))->init();
 
-        dump($config);
-
         $output->writeln('Config initialized.');
 
         $output->writeln('Creating resources...');
 
         exec('git init');
         $hooks = $this->writeHook($config);
-
-        dump($hooks);
 
 
         exec(`ssh -i {$config['ssh_key_path']} {$config['username']}@{$config['user']}.ftp.infomaniak.com "mkdir -p {$config['user_path']}/repositories/{$config['repository_name']} && cd {$config['user_path']}/repositories/{$config['repository_name']} && git init --bare && cd hooks && touch post-receive && chmod +x post-receive && echo '{$hooks}' >> post-receive"`);
